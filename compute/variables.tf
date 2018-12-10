@@ -7,4 +7,4 @@ variable "zone" {default = "us-west2-a"}
 variable "sbnt_name"{default = "ts-1"}
 variable "cidr"{default = "192.168.10.0/24"}
 variable "sbnt_region"{default ="us-west2"}
-
+variable "fw_name"{default ="test"}

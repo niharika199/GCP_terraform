@@ -17,7 +17,7 @@ resource "google_compute_instance" "test-ins" {
   }
 
   network_interface {
-#    network = "${google_compute_network.test-nw.self_link}"
+#   network = "${google_compute_network.test-nw.id}"
     subnetwork ="${google_compute_subnetwork.sub-net1.id}"
     }
   }
