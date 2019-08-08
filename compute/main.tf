@@ -7,7 +7,7 @@ provider "google" {
 #If the backend is not mentioned the state file will get stored in the local machine
 terraform {            #stores the statefile in the gcs (like s3 in AWS)
   backend "gcs" {
-    bucket  = "info-buc-1"
+    bucket  = "bucket-name"
     prefix  = "terraform/statefile"
   }
 }

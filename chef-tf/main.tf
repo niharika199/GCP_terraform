@@ -1,5 +1,5 @@
 provider "google"{
-project     = "proj-211305"
+project     = "project"
   region    = "us-east2"
 }
 
@@ -16,7 +16,7 @@ resource "google_compute_instance" "default" {
     }
   }
   metadata {
-        sshKeys = "niharika:${file("pv_key")}"
+        sshKeys = "user:${file("key")}"
     }
    network_interface {
     network = "default"
@@ -31,7 +31,7 @@ resource "google_compute_instance" "default" {
 
    connection {
             type = "ssh"
-            user = "niharika"
+            user = "user"
             private_key = "${file("key.pem")}"
         }
 
@@ -40,10 +40,10 @@ provisioner "chef"  {
         environment = "_default"
         run_list = ["nginx::default"]
         node_name = "test-node"
-        server_url = "https://api.chef.io/organizations/organis"
+        server_url = "https://<chef-server-url>"
         recreate_client = true
-        user_name = "niharika1"
-        user_key = "${file("niharika.pem")}"
+        user_name = "chef-user"
+        user_key = "${file("pem")}"
         fetch_chef_certificates = true
     }
 

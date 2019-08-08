@@ -1,7 +1,7 @@
 variable "nw_name" { default = "test" }
 variable "auto_create_subnetworks" {default = "false"}
-variable "project"{ default = "proj-211305" }
-variable "ins_name"{default = "test-tf"}
+variable "project"{ default = "project" }
+variable "ins_name"{default = "test"}
 variable "machine_type" {default = "f1-micro"}
 variable "zone" {default = "us-west2-a"}
 variable "sbnt_name"{default = "ts-1"}
